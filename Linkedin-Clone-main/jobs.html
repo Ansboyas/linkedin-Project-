@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Listings</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Job Listings</h1>
+        <input type="text" id="search" placeholder="Search for jobs...">
+        <button onclick="searchJobs()">Search</button>
+    </header>
+
+    <main id="job-list"></main>
+
+    <script>
+        let jobs = [
+            { title: "Software Engineer", company: "XYZ Tech", location: "Remote", description: "Experience in Python & JavaScript." },
+            { title: "Data Scientist", company: "ABC Corp", location: "New York", description: "Expertise in ML & Data Analysis." },
+            { title: "Mechanical Engineer", company: "MechaCorp", location: "Chennai", description: "Experience in CAD & machine design." },
+            { title: "Electronics Engineer", company: "CircuitWorks", location: "Bangalore", description: "Expertise in embedded systems." },
+            { title: "Civil Engineer", company: "InfraBuild", location: "Hyderabad", description: "Experience in large-scale projects." }
+        ];
+
+        let loadCount = 0;
+        function loadJobs() {
+            if (loadCount < 3) {
+                let jobList = document.getElementById("job-list");
+                jobs.forEach(job => {
+                    let jobCard = document.createElement("div");
+                    jobCard.classList.add("job-card");
+                    jobCard.innerHTML = `
+                        <h2>${job.title}</h2>
+                        <p>Company: ${job.company}</p>
+                        <p>Location: ${job.location}</p>
+                        <p>${job.description}</p>
+                        <button>Apply Now</button>
+                    `;
+                    jobList.appendChild(jobCard);
+                });
+                loadCount++;
+            }
+        }
+
+        window.addEventListener("scroll", function() {
+            if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+                loadJobs();
+            }
+        });
+
+        window.onload = loadJobs;
+    </script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 20px;
+        }
+        input {
+            padding: 10px;
+            width: 60%;
+            margin-top: 10px;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .job-card {
+            background: white;
+            margin: 20px auto;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+        }
+    </style>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn Networks</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>My Network</h1>
+        <input type="text" id="search" placeholder="Search for connections...">
+        <button onclick="searchConnections()">Search</button>
+    </header>
+    <main id="network-list">
+        <div class="connection-card">
+            <img src="profile1.jpg" alt="Profile Picture">
+            <h2>John Doe</h2>
+            <p>Software Engineer at XYZ Tech</p>
+            <button onclick="sendRequest(this)">Connect</button>
+        </div>
+        <div class="connection-card">
+            <img src="profile2.jpg" alt="Profile Picture">
+            <h2>Jane Smith</h2>
+            <p>Data Scientist at ABC Corp</p>
+            <button onclick="sendRequest(this)">Connect</button>
+        </div>
+    </main>
+    
+    <aside id="notifications">
+        <h2>Notifications</h2>
+        <ul id="notification-list">
+            <li>No new notifications</li>
+        </ul>
+    </aside>
+
+    <script>
+        function sendRequest(button) {
+            button.innerText = "Request Sent";
+            button.disabled = true;
+            
+            let notificationList = document.getElementById("notification-list");
+            let newNotification = document.createElement("li");
+            newNotification.innerText = "You sent a connection request.";
+            notificationList.appendChild(newNotification);
+        }
+    </script>
+</body>
+</html>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background-color: #f4f4f4;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    header {
+        background-color: #007bff;
+        color: white;
+        padding: 20px;
+        width: 100%;
+        text-align: center;
+    }
+    input {
+        padding: 10px;
+        width: 60%;
+        margin-top: 10px;
+    }
+    button {
+        padding: 10px 15px;
+        background-color: #28a745;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+    .connection-card {
+        background: white;
+        margin: 20px auto;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 80%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+    img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+    }
+    aside {
+        margin-top: 20px;
+        background: white;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 80%;
+    }
+</style>

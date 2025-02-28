@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B.Sc Computer Science Job Search</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>B.Sc Computer Science Job Search</h1>
+        <input type="text" id="search" placeholder="Search for B.Sc CS jobs...">
+        <button onclick="searchJobs()">Search</button>
+    </header>
+    <main id="job-list">
+        <div class="job-card">
+            <h2>Software Developer</h2>
+            <p>Company: XYZ Tech</p>
+            <p>Location: Remote</p>
+            <p>Description: Looking for a developer skilled in JavaScript & Python.</p>
+            <button>Apply Now</button>
+        </div>
+        <div class="job-card">
+            <h2>Data Analyst</h2>
+            <p>Company: Data Insights</p>
+            <p>Location: Bangalore</p>
+            <p>Description: Data analysis role requiring SQL and Python knowledge.</p>
+            <button>Apply Now</button>
+        </div>
+    </main>
+</body>
+</html>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background-color: #f4f4f4;
+    }
+    header {
+        background-color: #007bff;
+        color: white;
+        padding: 20px;
+    }
+    input {
+        padding: 10px;
+        width: 60%;
+        margin-top: 10px;
+    }
+    button {
+        padding: 10px 15px;
+        background-color: #28a745;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+    .job-card {
+        background: white;
+        margin: 20px auto;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 80%;
+    }
+</style>
